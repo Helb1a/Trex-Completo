@@ -52,10 +52,10 @@ function setup() {
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
   
-  gameOver = createSprite(300,100);
+  gameOver = createSprite(width/2,height/3);
   gameOver.addImage(gameOverImg);
   
-  restart = createSprite(300,140);
+  restart = createSprite(width/2,height/2);
   restart.addImage(restartImg);
   
  
@@ -71,7 +71,6 @@ function setup() {
 
   
   trex.setCollider("rectangle",0,0,trex.width,trex.height);
-  trex.debug = true
   
   score = 0;
   
@@ -81,7 +80,7 @@ function draw() {
   
   background(180);
   //displaying score
-  text("Score: "+ score, 500,50);
+  text("Score: "+ score, width-100,100);
   
   
   if(gameState === PLAY){
@@ -103,7 +102,7 @@ function draw() {
     }
     
     //jump when the space key is pressed
-    if((keyDown("space")||touches.length>0)&& trex.y >= 100) {
+    if((keyDown("space")||touches.length>0)&& trex.y >= height-50) {
         trex.velocityY = -12;
         jumpSound.play();
         touches = [];
@@ -207,7 +206,7 @@ function spawnClouds() {
   //write code here to spawn the clouds
   if (frameCount % 60 === 0) {
     var cloud = createSprite(600,120,40,10);
-    cloud.y = Math.round(random(80,120));
+    cloud.y = Math.round(random(0,height/1.5));
     cloud.addImage(cloudImage);
     cloud.scale = 0.5;
     cloud.velocityX = -3;
