@@ -172,7 +172,7 @@ function reset(){
 
 
 function spawnObstacles(){
- if (frameCount % 200 === 0){
+ if (frameCount % 150 === 0){
    var obstacle = createSprite(windowWidth,height-30,10,40);
    obstacle.velocityX = -(6 + score/100);
    
@@ -205,7 +205,7 @@ function spawnObstacles(){
 
 function spawnClouds() {
   //write code here to spawn the clouds
-  if (frameCount % 300 === 0) {
+  if (frameCount % 200 === 0) {
     var cloud = createSprite(600,120,40,10);
     cloud.y = Math.round(random(0,height/1.5));
     cloud.addImage(cloudImage);
