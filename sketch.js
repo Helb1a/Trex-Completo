@@ -46,7 +46,7 @@ function setup() {
   trex.addAnimation("collided", trex_collided);
   
 
-  trex.scale = 0.5;
+  trex.scale = 0.7;
   
   ground = createSprite(width/2,height-20,width,20);
   ground.addImage("ground",groundImage);
@@ -103,7 +103,7 @@ function draw() {
     }
     
     //jump when the space key is pressed
-    if((keyDown("space")||touches.length>0)&& trex.y >= height-50) {
+    if((keyDown("space")||touches.length>0)&& trex.y >= height-70) {
         trex.velocityY = -12;
         jumpSound.play();
         touches = [];
@@ -195,7 +195,7 @@ function spawnObstacles(){
     }
    
     //assign scale and lifetime to the obstacle           
-    obstacle.scale = 0.5;
+    obstacle.scale = 0.7;
     obstacle.lifetime = 300;
    
    //add each obstacle to the group
@@ -209,7 +209,7 @@ function spawnClouds() {
     var cloud = createSprite(600,120,40,10);
     cloud.y = Math.round(random(0,height/1.5));
     cloud.addImage(cloudImage);
-    cloud.scale = 0.5;
+    cloud.scale = 0.7;
     cloud.velocityX = -3;
     
      //assign lifetime to the variable
